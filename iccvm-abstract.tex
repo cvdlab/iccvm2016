@@ -1,0 +1,43 @@
+\documentclass[11pt,oneside,A4]{amsart}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=25mm,
+ right=25mm,
+ top=25mm,
+ bottom=25mm,
+ }
+
+\title{Computational tools and file format for visual interactive indoor mapping}
+\author{Marco Sportillo$^1$ \and Marco Virgadamo$^1$ \and Enrico Marino$^1$ \and Federico Spini$^1$ \and Antonio Bottaro$^3$ \and Alberto Paoluzzi$^2$}
+\date{
+$^1$Dipartimento di Ingegneria, Universit\`a Roma Tre, Rome, Italy,  \\
+$^2$Dipartimento di Matematica e Fisica, Universit\`a Roma Tre, Rome, Italy,  \\
+$^3$Sogei S.p.A., Ricerca e Sviluppo, Rome, Italy, 
+}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+
+This paper introduces \textsc{\large five} (Framework for Indoor Visual Environments) and \textsc{\large hijson} (Hierarchical Interactive JSON), respectively a Javascript API for indoor mapping applications, and a novel cartographic document format. Client-side \textsc{\large five} applications, entirely based on web technologies, rely on \textsc{\large hijson} documents produced server-side using \textsc{\large lar}, a novel representation scheme for topology and geometry.
+
+An \emph{interactive indoor mapping} environment is a virtual reconstruction of a physical indoor space, where the user may interact with virtual objects, experienced in the actual position they occupy in the real world. Our approach outlines a specialized and evoluted  3D \emph{user interface} giving a glimpse of a section of the real world, that the user can handle intuitively.  Furthermore, the virtual indoor environment API provides a platform where many different applications can rely upon. Accessible via web browsers from any kind of device, several applications may coexist on this platform. IoT monitoring, realtime multi-person tracking, and  cross-storey user navigation, are already implemented using an automatic search for all valid walkable routes, and taking into account both architectural obstacles and furniture.
+
+The \textsc{\large hijson} format is used to represent any geometry of the indoor space of complex buildings, capturing their hierarchical structure, a complete representation of their topology, and all the objects (either smart or not) contained inside. Such textual representation allows the \textsc{\large five} framework to offer a web environment in which the user is presented with 2D or 3D models to navigate. With respect to current cartographic formats, \textsc{\large hijson} suggests four major enhancements: (a) exposes a hierarchical structure; (b) uses local metric coordinate systems; (c) may import external geometric models; (d) accepts semantic extensions.
+The semantic extensions supported by the \textsc{\large five} architecture encapsulate the details about communication protocols, rendering style, and exchanged and displayed information, allowing the \textsc{\large hijson} format to be extended with any sort of models of objects, sensors or behaviors.
+
+This paper quickly outlines the generation of geometric data of a complex building, to provide both an explicit semantic and a hierarchical model of indoor spaces. \textsc{\large lar}, a general representation for geometric and solid modeling is used for this purpose. The generated \textsc{\large lar} structures are exported to \textsc{\large hijson} format, extending \textsc{\large geojson} for indoor mapping and the Internet-of-Things. A convenient way to extend the representation capabilities of IoT \emph{smart objects} is also mentioned as semantic extensions, that affects both document format and the web framework, and can be easily collected in a public repository.
+
+
+\end{document}  
