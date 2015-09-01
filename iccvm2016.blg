@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: iccvm2016.aux
+The style file: cvm.bst
+Database file #1: doceng2015.bib
+Warning--empty title in Dicarlo:2014:TNL:2543138.2543294
+Warning--empty journal in Dicarlo:2014:TNL:2543138.2543294
+Warning--empty year in Dicarlo:2014:TNL:2543138.2543294
+You've used 15 entries,
+            2120 wiz_defined-function locations,
+            594 strings with 6704 characters,
+and the built_in function-call counts, 5349 in all, are:
+= -- 504
+> -- 249
+< -- 5
++ -- 98
+- -- 82
+* -- 352
+:= -- 857
+add.period$ -- 49
+call.type$ -- 15
+change.case$ -- 82
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 218
+empty$ -- 446
+format.name$ -- 82
+if$ -- 1165
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 13
+newline$ -- 81
+num.names$ -- 32
+pop$ -- 119
+preamble$ -- 1
+purify$ -- 69
+quote$ -- 0
+skip$ -- 158
+stack$ -- 0
+substring$ -- 281
+swap$ -- 62
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 3
+while$ -- 45
+width$ -- 17
+write$ -- 168
+(There were 3 warnings)
