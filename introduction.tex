@@ -11,6 +11,8 @@ platform where many different applications can rely upon. Both promising and
 already well explored ICT applications may find in \emph{virtual indoor mapping} the
 perfect context to be integrated into.
 
+This paper quickly outlines the generation of geometric data of a complex building, to provide both an explicit semantic and a hierarchical model of indoor spaces. \textsc{\large lar}, a general representation for geometric and solid modeling is used for this purpose. The generated \textsc{\large lar} structures are exported to \textsc{\large hijson} format, extending \textsc{\large geojson} for indoor mapping and the Internet-of-Things. A convenient way to extend the representation capabilities of IoT \emph{smart objects} is also mentioned as semantic extensions, that affects both document format and the web framework, and can be easily collected in a public repository.
+
 In particular, for environments with massive presence of sensor-equipped (or
 ``smart'') objects, which realize the so-called \emph{IoT} (Internet of
 Things), the interactive indoor mapping represents an ideal integrated
@@ -66,17 +68,6 @@ used to achieve the objectives stated above. Section~\ref{case-study} presents
 a case-study application of the document format discussed in this paper.
 Finally, Section~\ref{conclusions} proposes some conclusive remarks and future
 developments.
-
-
-\begin{figure*}[!htbp] % figure placement: here, top, bottom, or page
- \centering
- % \includegraphics[width=0.5\linewidth]{images/minimum} 
- \includegraphics[width=0.5\linewidth]{images/minimum-colors-test} 
- \hfill
- \includegraphics[width=0.4\linewidth]{images/boundary} 
- \caption{A toy example of the LAR scheme: (a) the bare minimum of data with \emph{complete} information about topology; (b) the extracted boundary; (c) the extraction method $[e] = [\partial][f]$ giving the coordinate representation (in the discrete basis of the 1-cells) of the boundary edges $[e]$ by product of the sparse boundary operator matrix $[\partial]$ times the coordinate representation $[f]$ of the 2-cells (faces), in the discrete basis of the 2-cells.}
- \label{fig:minimum}
-\end{figure*}
 
 
 % \begin{figure}[!h]
