@@ -1,22 +1,20 @@
 
 \section{HIJSON Toolkit}\label{toolkit}
 
-The HIJSON Toolkit is a software module that implements common
-operations and transformations on HIJSON documents. Written in
-\emph{JavaScript} language, this software module has been built to be deployed in the web
-environment. It is \emph{modular} and entirely \emph{isomorphic},
-i.e.~can run on the server as well as on every client. Working in the
-web environment, the Toolkit benefits of the ``fertility'' commonly concerning the
-software development in this field: for example, it takes advantage of libraries and
-frameworks such as \emph{React}, ``the JavaScript library for building
-user interfaces'' by Facebook, and as \emph{Three.js}, the current de-facto standard to deal
-with \emph{WebGL} technologies.
+The HIJSON Toolkit is a software module that implements common operations and
+transformations on HIJSON documents. Written in \emph{JavaScript} language,
+this software module has been built to be deployed in the web environment. It
+is \emph{modular} and entirely \emph{isomorphic}, i.e.~can run on the server
+as well as on every client. It relies on libraries and frameworks such as
+\emph{React}, ``the JavaScript library for building user interfaces'' by
+Facebook, and as \emph{Three.js}, the current de-facto standard to deal with
+\emph{WebGL} technologies.
 
 The Toolkit executes the instantiation and extension logic of a HIJSON
-document, and provides a multistage transformation pipeline that, according to the requirements,
-can be used either entirely or only in part.
+document, and provides a multistage transformation pipeline that, according to
+the requirements, can be used either entirely or only in part.
 
-\subsection{Processing pipeline}\label{hijson-processing-pipeline}
+\subsection{Processing pipeline}\label{pipeline}
 
 The HIJSON processing pipeline implements the sequence of preliminary
 transformations that have to be applied to a HIJSON document before any
@@ -43,19 +41,17 @@ Figure~\ref{fig:pipeline}.
 \label{fig:pipeline}
 \end{figure}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- \textit{\texttt{validation}} - The first one is the validation stage. In
+% \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=*]
+% \item
+ 1. \textit{\texttt{validation}} - The first one is the validation stage. In
   order to begin with the effective transformations the input HIJSON  document
   must be compliant with both the syntax format and the structural requirements.   In the
   case the validation stage fails, processing aborts and does not continue to
   following stages; intead if this stage successes, then the output for the next stage is a
   validated  HIJSON.
 
-\item
- \textit{\texttt{georeferencing}} - In the second stage, in order to allow
+% \item
+ 2. \textit{\texttt{georeferencing}} - In the second stage, in order to allow
  for continuous outdoor/indoor navigation, the system needs to compute
  the georeferencing matrix, a linear operator able to transform local
  coordinates into global coordinates (world coordinate
@@ -64,24 +60,28 @@ Figure~\ref{fig:pipeline}.
  contained in HIJSON configuration part and precisely from the
  correspondence of three real world points to three points included
  into the HIJSON document.
-\item
- \textit{\texttt{parsing}} - The parsing stage takes the validated and
+
+% \item
+ 3. \textit{\texttt{parsing}} - The parsing stage takes the validated and
  georeferenced HIJSON as its input, that as illustrated before can be
  thought of as a list of HIJSON Elements, parses them and produces an
  instance of the HIJSON Tree. The HIJSON Tree is an object in memory
  representing the hierarchical structure of the building described
  by the HIJSON document.
-\item
- \textit{\texttt{graph of paths generation}} - The fourth stage is in char\-ge
- of the generation of the graph of paths. The algorithm to achieve such a 
- goal is introduced in Section~\ref{sec:paths}. The graph of paths can be used to compute valid directions between pairs of points of
- interest inside the building model. Once the graph of paths has been computed, the
- input HIJSON Tree is augmented with paths information, becoming what
- has been called an HTAP (HIJSON Tree Augmented with Paths).
- Augmentation always takes place in the form of an addition of leaf nodes as children of a
- specific element (e.g. ``room'').
-\item
- \textit{\texttt{2D layers generation}} - The fifth stage concerns the
+
+% \item  
+ 4. \textit{\texttt{graph of paths generation}} - The fourth stage is
+ in charge  of the generation of the graph of paths 
+ (see \ref{automatic-generation-of-valid-paths}). The graph of paths can
+ be used to compute valid directions between pairs of points of  interest
+ inside the building model. Once the graph of paths has been computed, the
+ input HIJSON Tree is augmented with paths information, becoming what  has been
+ called an HTAP (HIJSON Tree Augmented with Paths).  Augmentation always takes
+ place in the form of an addition of leaf nodes as children of a  specific
+ element (e.g. ``room'').
+
+% \item
+ 5. \textit{\texttt{2D layers generation}} - The fifth stage concerns the
  generation of GeoJSON \emph{layers}. For each storey of the building, the Toolkit generates a
  GeoJSON layer that can be used for the creation of a 2D map. Each layer
  contains only the children of a `level' node of the HIJSON Tree. 
@@ -89,15 +89,16 @@ Figure~\ref{fig:pipeline}.
  by means of a Boolean value. The geographical coordinates of every elements
  are calculated by a series of multiplications between transformation matrices obtained 
  during the tree traversal to the local coordinates.
-\item
- \textit{\texttt{marshalling}} - The last stage is responsible for executing
+
+% \item
+ 6. \textit{\texttt{marshalling}} - The last stage is responsible for executing
  a serialization of the the transformed data. This stage, in which are performed tasks like breaking
  dependency-loops and stringification, is
  mainly useful  server-side, as the output is there stored ready to be
  served to any requiring client.
-\end{enumerate}
+% \end{enumerate}
 
-\subsubsection{Automatic generation of valid paths}\label{algorithmics-automatic-generation-of-valid-paths}\label{sec:paths}
+\subsubsection{Automatic generation of valid paths}\label{automatic-generation-of-valid-paths}
 
 The fourth stage of the processing pipeline is responsible for the
 generation of a graph of valid paths through the entire model
@@ -105,21 +106,7 @@ represented by the input HIJSON document. The graph generated according
 to the algorithm described in the following, although non optimal,
 ensures a complete coverage of the surface while limiting the number of
 generated nodes. The resulting graph is weighted on the edges with nodes
-distances. Each graph node may represent either:
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- a \emph{standard path node}, i.e.~a junction node or possibly an endpoint of a
- path;
-\item
- a \emph{connection node}, used as subproblem composing element in the divide et
- impera approach adopted;
-\item
-an \emph{element node} i.e.~HIJSON Element (whose HIJSON Class explicitly grants
- his presence in the graph), typically an endpoint of a path.
-\end{enumerate}
+distances. Each graph node may represent either: a) a \emph{standard path node}, i.e.~a junction node or possibly an endpoint of a path; b) a \emph{connection node}, used as subproblem composing element in the divide et impera approach adopted; c) an \emph{element node} i.e.~HIJSON Element (whose HIJSON Class explicitly grants his presence in the graph), typically an endpoint of a path.
 
 The graph of paths allows for calculations of directions between any two given
 nodes. Although different approaches have been explored \cite{6999103}, 
@@ -132,61 +119,35 @@ paths generation is split in several sub-problems, which consist in
 the computation of the sub-graphs relative to each individual space, more generally a single room. The sub-graphs are then linked together through the
 connection nodes (which in most cases represent doors). The resolution
 of each sub-problem (as depicted in Figure~\ref{fig:graph-generation}), 
-is composed by four steps, as detailed below.
+is composed by four steps. 
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- Computation of the walkable area of the space: this task is
+1. \textit{Computation of the walkable area of the space}: this task is
  accomplished by subtracting the shape of the obstacles from the area
  of the space; the result is typically a surface with holes.
-\item
- Triangulation of the walkable area: the computed surface is
+
+2. \textit{Triangulation of the walkable area}: the computed surface is
  triangulated taking into account the presence of holes.
-\item
- Identification of graph nodes: for each triangle side completely
+
+3. \textit{Identification of graph nodes}: for each triangle side completely
  internal to the area, its midpoint is selected as standard path node.
-\item
- Junction of nodes: nodes relative to the same triangle are then linked
+
+4. \textit{Junction of nodes}: nodes relative to the same triangle are then linked
  pairwise; both element nodes and connection nodes (i.e.~doors) are
  linked to the nearest node of the space (i.e.~room).
-\end{enumerate}
 
-\begin{figure*}[!htbp]
+\begin{figure}[!htbp]
  \centering
- \begin{subfigure}[b]{0.235\textwidth}
- \includegraphics[width=\textwidth]{images/graph-generation/single/graph-generation-1}
- \caption{}
- \label{fig:graph-generation-a}
- \end{subfigure}
+ \includegraphics[angle=-90,origin=c,width=.22\linewidth]{images/graph-generation/single/graph-generation-1}
  ~
- \begin{subfigure}[b]{0.235\textwidth}
- \includegraphics[width=\textwidth]{images/graph-generation/single/graph-generation-2}
- \caption{}
- \label{fig:graph-generation-b}
- \end{subfigure}
+ \includegraphics[angle=-90,origin=c,width=.22\linewidth]{images/graph-generation/single/graph-generation-2}
  ~
- \begin{subfigure}[b]{0.235\textwidth}
- \includegraphics[width=\textwidth]{images/graph-generation/single/graph-generation-3}
- \caption{}
- \label{fig:graph-generation-c}
- \end{subfigure}
+ \includegraphics[angle=-90,origin=c,width=.22\linewidth]{images/graph-generation/single/graph-generation-3}
  ~
- \begin{subfigure}[b]{0.235\textwidth}
- \includegraphics[width=\textwidth]{images/graph-generation/single/graph-generation-4}
- \caption{}
- \label{fig:graph-generation-d}
- \end{subfigure}
- 
- \caption{graph of paths generation: 
- (a) detection of obstacles and computation of walkable area; 
- (b) triangulation of walkable area; 
- (c) identification of graph nodes; 
- (d) junction of nodes.
- }
+ \includegraphics[angle=-90,origin=c,width=.22\linewidth]{images/graph-generation/single/graph-generation-4}
+
+ \caption{the 4 steps graph of paths generation}
  \label{fig:graph-generation}
-\end{figure*}
+\end{figure}
 
 \subsection{HIJSON Class definition}\label{hijson-class-definition}
 
@@ -214,7 +175,7 @@ To extend the toolkit in order to deal with a new class of HIJSON Element is
 required to specify a new HIJSON Class, by defining the following
 properties and methods:
 
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*]
 \item
  \texttt{in\_graph}: a Boolean value to express if the element is an
  approachable point in the graph of paths;

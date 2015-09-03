@@ -42,13 +42,13 @@ be conveniently modelled using local coordinates, and then placed in the right p
 with respect to the position of the parent (or container) element applying a rotation, followed by a
 translation transformation.
 
-Another substantial advantage is represented by the adoption of a metric
-reference frame,  consequently simplifying the compilation of the document,
-either manually generated or produced by software tools. Just remember that
-the GeoJSON coordinates are geographical, a pairs of (absolute) latitude
-and longitude angles, like the ones provided by GNSS systems. This kind of
-coordinates  are certainly not particularly user friendly, when positioning a
-smart device or a furniture element within a specific building room.
+Moreover, the adoption of a metric reference frame simplifies the compilation
+of the document, either manually generated or produced by software tools. Just
+remember that the GeoJSON coordinates are geographical, a pairs of (absolute)
+latitude and longitude angles, like the ones provided by GNSS systems. This
+kind of coordinates  are certainly not particularly user friendly, when
+positioning a smart device or a furniture element within a specific building
+room.
 
 The HIJSON document format is specially designed to guarantee the user to be routed seamlessly 
 from outdoor to indoor and vice versa. Even if indoor geometries are entered in a local metric 
@@ -177,11 +177,11 @@ like an IP-cam or a connected thermostat.
 A HIJSON Element defines a GeoJSON compliant syntax to describe both geometry and properties of
 an object. It represents the atomic component of a HIJSON document. 
 It would be a best practice to group
-together related JSON Element using \texttt{FeatureCollections}: several classification strategies
+together related JSON Elements using \texttt{FeatureCollections}: several classification strategies
 can be applied, for example by grouping the elements by storey or even by room.
 Alternatively, since the furnishings are more likely to change than the
 architectural components of a building, these two different kinds of elements
-can be isolated in different \texttt{FeatureCollections}.
+can be isolated in different \texttt{FeatureCollections}, as it has been done in the listing~\ref{lst:hijson-example}.
 
 The hierarchical structure of the document gives visible form to the capability of HIJSON Elements to have children elements. A unique ID is mandatory for every HIJSON Element. 
 
