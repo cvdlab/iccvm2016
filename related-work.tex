@@ -1,6 +1,6 @@
 \section{Related work}\label{related-work}
 
-Research on the cartographic representation of indoor environments is
+The virtual indoor mapping is a quite young field of research resulting from a mix of interdisciplinary knowledge. Thus significative works are not known to the authors at  the moment. Counterwise, research on the cartographic representation of indoor environments is
 extensive and heterogeneous with respect to the strategies
 applied. Different information sources are used, and accuracy of the
 produced solution depends on the adopted approach. In some cases the
@@ -37,63 +37,27 @@ the \emph{GeoJSON} format \cite{geojson}, which can be easily used for any type 
 annotation. In some cases it has been slightly adapted to be used in indoor
 environments: it is the case of the \emph{IndoorJSON} format \cite{indoorjson}.
 
-\subsection{The GeoJSON format}\label{the-geojson-format}
-
 \emph{GeoJSON} is a geospatial data interchange format based on JSON, suitable for a
 geometrical encoding of various geographic data structures. As opposed to GIS
 formats, GeoJSON is an open standard. Positions need to be expressed in
 geographical coordinates (usually WGS84).
 
-GeoJSON supports some geometric primitives, including: {\tt Point},
-{\tt Line\-String}, {\tt Polygon}, {\tt MultiPoint},
-{\tt MultiLineString}, and {\tt MultiPolygon}. Lists of geometries are
-represented by a {\tt GeometryCollection}. Geometries with additional
-properties are {\tt Feature} objects. Lists of {\tt Feature} are
-represented by a {\tt FeatureCollection}.
+GeoJSON \cite{geojson} allows to define arbitrary objects, called {\tt
+Feature}, by specifying its {\tt geometry}, and by associtating to it some
+{\tt properties}. Ccomplex shapes are defined through the composition of
+simpler  basic geometric primitive objects. 
 
-A single {\tt Feature} is composed essentially by two mandatory fields:
-{\tt geometry}, which describes the object geometry accordingly to the
-previously recalled primitives, and {\tt properties} which contains
-additional information about the {\tt Feature}.
+Mainly due to its simplicity,
+GeoJSON is widely used and deeply integrated into several applications and
+services.
 
-In GeoJSON it is possible to define complex shapes through the composition of simpler
- objects. Mainly due to its simplicity, GeoJSON is widely used and
-deeply integrated into several applications and services.
-
-\subsection{The IndoorJSON format}\label{experiences-on-indoor-json}
-
-\emph{IndoorJSON} is a GeoJSON variant defined and used by \emph{indoor.io}, a
+\emph{IndoorJSON} \cite{indoorjson} is a GeoJSON variant defined and used by \emph{indoor.io}, a
 Finnish company devoted to indoor environment mapping. IndoorJSON is compliant
-with GeoJSON syntax, and it may consist of any number of {\tt Features}
-and/or {\tt FeatureCollections}. All {\tt Features} are interpreted
-similarly regardless of their grouping into nested
-{\tt FeatureCollections}. IndoorJSON supports all GeoJSON geometry types.
+with GeoJSON syntax, supporting all GeoJSON geometry types.
 
-Some particular properties are used to correctly define the indoor elements:
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- {\tt level}: describes which storey contains the feature;
-\item
- {\tt geomType}: identifies the category of the object, useful during the visualization
- process.
-\end{itemize}
-
-There are some additional but not mandatories properties, useful for
-the indoor representation:
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- {\tt accessible}: describes if an element is walkable or not;
-\item
- {\tt connector}: defines if the element is a connection between two
- storeys;
-\item
- {\tt direction}: describes the direction of the connection (both
- ways, only up, only down);
-\end{itemize}
+Customization with respect to GeoJSON format is obtained exploiting particular properties to correctly define the indoor elements: \texttt{level} (which describes which storey contains the feature) and \texttt{geomType} (which identifies the category of the object). A number of non-mandatory indoor properties is also defined: \texttt{accessible} (which describes if an element is walkable or not), \texttt{connector} (which defines if the element is a connection between two
+ storeys) \texttt{direction} (which describes the direction of the connection: both
+ ways, only up, only down).
 
 A syntax validator is provided by \emph{indoor.io}, but the commercial nature
 of this project limits the number of tools available to deal with this

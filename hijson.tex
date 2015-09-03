@@ -1,17 +1,15 @@
-\section{The HIJSON format}\label{the-hijson-format}
+\section{The HIJSON format}\label{hijson}
 
-The focus of this work is the definition of a novel format of cartographic
-documents along with the software ecosystem rooted on it. A simple but
-effective algorithm to find indoor valid routes is also provided. HIJSON
-(Hierarchical Indoor JSON) is the name chosen for the new document format; 
-it the accompanying software framework, aim to realize a
-mapping of real indoor spaces with a virtual interactive web environment.
-HIJSON is based upon ideas and design principles collected from previous
-formats and identifies four critical improvements with respect to them: it
-exposes a \emph{hierarchical structure}, uses \emph{metric local coordinate
-system}, may import \emph{external geometric models} and accepts \emph{semantic
-extensions}. 
-% Furthermore, geometrical  and topological data are conveniently imported and represented via LAR, an advanced  representation scheme, allowing to deal with \emph{hyperlinked geometric models}.
+To support the interactive indoor mappong platform, a novel format of
+cartographic documents has been defined: it has been named \emph{HIJSON}
+(Hierarchical Indoor JSON). It is based upon ideas and design principles
+collected from previous formats and identifies four critical improvements with
+respect to them: it exposes a \emph{hierarchical structure}, uses \emph{metric
+local coordinate system}, may import \emph{external geometric models} and
+accepts \emph{semantic extensions}. Furthermore, geometrical  and topological
+data can be conveniently imported and represented via LAR (see \ref{lar}), an
+advanced representation scheme, allowing to deal with \emph{hyperlinked
+geometric models}.
 
 
 
@@ -57,27 +55,6 @@ from outdoor to indoor and vice versa. Even if indoor geometries are entered in 
 coordinate system, continuos outdoor/indoor navigation is ensured through the processing pipeline
 detailed below.
 
-\paragraph*{Hyperlinked geometric models}\label{optional-lar}
-
-The HIJSON document may further import external geometric models --- either of the buildings themselves or the interior furniture or devices --- that are topologically complete (in the sense of solid modeling~\cite{Requicha:1980:RRS:356827.356833}) and very compact. 
-Such models, coming from a source outside the document, are acquired by hyperlinking JSON files that contain a Linear Algebraic Representation (LAR) of topology and geometry, to be expanded for visualization or interaction at any useful level of detail. 
-
-The LAR scheme~\cite{Dicarlo:2014:TNL:2543138.2543294} is characterised by a very large domain, including architecture, building and construction~\cite{paoluzziMS:2014}, 2D and 3D engineering meshes, non-manifold geometric and solid models and meshes, and high-resolution 3D images~\cite{cadanda:2015}. This scheme uses the set of \emph{Combinatorial Cellular Complexes} (CCC) as mathematical domain
-\cite{Basak:2010}, and various compressed representations of \emph{sparse matrices} \cite{gemmexp} as codomain. 
-
-Since LAR provides a complete representation of the topology of the represented space,
-the matrix $[\partial_d]$ of the boundary operator shall be used to compute the coordinate representation $[c]$ of the \emph{boundary} chain of \emph{any subset} $c$ of cells, though \emph{a single} operation of SpMV multiplication \cite{gemmexp} between the \texttt{CSR} (Compressed Sparse Row) representation of $[\partial]$ and the \texttt{CSC} (Compressed Sparse Column) representation of the $[c]$ chain, resulting in very efficient computations on modern hardware, even mobile.
-
-The expansion of a LAR model, to be considered as a general-purpose graphic primitive, may be executed on either the server or the supervisor client of the HIJSON Web Toolkit architecture (see Section~\ref{server-architecture}), or even on the \emph{Explorer} client, depending on the size and the locality of the model to be expanded.
-
-% \begin{figure}[htbp] % figure placement: here, top, bottom, or page
-% \centering
-% \includegraphics[width=\linewidth]{images/sogei} 
-% \caption{Office building: (a) the schematic plan; (b) the simplified 3D model generated for testing on the field the in-door mapping project described in this paper.}
-% \label{fig:sogei}
-% \end{figure}
-
-
 \paragraph*{Semantic extensions}\label{semantic-extensions}
 
 Semantic extensions make the HIJSON format extendible and customizable, that
@@ -88,10 +65,31 @@ Semantic extensions are to be defined both as HIJSON format syntax and as
 HIJSON Toolkit source code. In particular it is necessary to define respectively
 a new HIJSON Element and a new HIJSON Class, as specified below.
 
+% \paragraph*{Hyperlinked geometric models}\label{hyper-linked-geometric-models}
+
+% The HIJSON document may further import external geometric models --- either of the buildings themselves or the interior furniture or devices --- that are topologically complete (in the sense of solid modeling~\cite{Requicha:1980:RRS:356827.356833}) and very compact. 
+% Such models, coming from a source outside the document, are acquired by hyperlinking JSON files that contain a Linear Algebraic Representation (LAR) of topology and geometry, to be expanded for visualization or interaction at any useful level of detail. 
+
+% The LAR scheme~\cite{Dicarlo:2014:TNL:2543138.2543294} is characterised by a very large domain, including architecture, building and construction~\cite{paoluzziMS:2014}, 2D and 3D engineering meshes, non-manifold geometric and solid models and meshes, and high-resolution 3D images~\cite{cadanda:2015}. This scheme uses the set of \emph{Combinatorial Cellular Complexes} (CCC) as mathematical domain
+% \cite{Basak:2010}, and various compressed representations of \emph{sparse matrices} \cite{gemmexp} as codomain. 
+
+% Since LAR provides a complete representation of the topology of the represented space,
+% the matrix $[\partial_d]$ of the boundary operator shall be used to compute the coordinate representation $[c]$ of the \emph{boundary} chain of \emph{any subset} $c$ of cells, though \emph{a single} operation of SpMV multiplication \cite{gemmexp} between the \texttt{CSR} (Compressed Sparse Row) representation of $[\partial]$ and the \texttt{CSC} (Compressed Sparse Column) representation of the $[c]$ chain, resulting in very efficient computations on modern hardware, even mobile.
+
+% The expansion of a LAR model, to be considered as a general-purpose graphic primitive, may be executed on either the server or the supervisor client of the HIJSON Web Toolkit architecture (see Section~\ref{server-architecture}), or even on the \emph{Explorer} client, depending on the size and the locality of the model to be expanded.
+
+% \begin{figure}[htbp] % figure placement: here, top, bottom, or page
+% \centering
+% \includegraphics[width=\linewidth]{images/sogei} 
+% \caption{Office building: (a) the schematic plan; (b) the simplified 3D model generated for testing on the field the in-door mapping project described in this paper.}
+% \label{fig:sogei}
+% \end{figure}
+
+
 
 \subsection{Structure and syntax}\label{syntax-structure}
 
-The HIJSON document is composed by a configuration section, followed by one or more {\tt FeatureCollections}, containing the actual data.
+A HIJSON document is composed by a configuration section, followed by one or more \texttt{FeatureCollections}, containing the actual data.
 
 Listing~\ref{lst:hijson-example} shows a simplified HIJSON document, devoid of punctual details, to make clear to the reader the overall document structure.
 
@@ -126,11 +124,11 @@ Listing~\ref{lst:hijson-example} shows a simplified HIJSON document, devoid of p
 
 The configuration includes parameters and settings needed for building representation in the form of a JSON Object. One of the core information in this section is defined by the correspondence between three points of the local coordinate system and three points of the real world, expressed in geographical coordinates. This is needed to ensure a seamlessly passage from local to geographical coordinate system and vice versa.
 
-After the configuration part, the document includes a list of {\tt FeatureCollection}. An example
-of {\tt FeatureCollection} is given in listing~\ref{lst:feature-collection-example}.
+After the configuration part, the document includes a list of \texttt{FeatureCollection}. An example
+of \texttt{FeatureCollection} is given in listing~\ref{lst:feature-collection-example}.
 
 
-\begin{lstlisting}[language=json, label={lst:feature-collection-example}, captionpos=b,  caption=Example of {\tt FeatureCollection}.]
+\begin{lstlisting}[language=json, label={lst:feature-collection-example}, captionpos=b,  caption=Example of \texttt{FeatureCollection}.]
 {
   "id": "architecture",
   "type": "FeatureCollection",
@@ -160,9 +158,9 @@ of {\tt FeatureCollection} is given in listing~\ref{lst:feature-collection-examp
 
 Each element of the list is given in the form of a GeoJSON {\tt
 FeatureCollection}, that contains an arbitrary  number of HIJSON Elements.
-Each {\tt FeatureCollection} imposes a logical relationship that can be used
+Each \texttt{FeatureCollection} imposes a logical relationship that can be used
 to group together related HIJSON Elements. Since  HIJSON Elements adhere to
-the GeoJSON format, each {\tt FeatureCollectio}n results compliant with GeoJSON
+the GeoJSON format, each \texttt{FeatureCollectio}n results compliant with GeoJSON
 syntax and then accepted by any GeoJSON validator. As detailed below, the
 HIJSON format  introduces some additional rules that allow the adoption of
 this format for indoor representation.
@@ -179,44 +177,34 @@ like an IP-cam or a connected thermostat.
 A HIJSON Element defines a GeoJSON compliant syntax to describe both geometry and properties of
 an object. It represents the atomic component of a HIJSON document. 
 It would be a best practice to group
-together related JSON Element using {\tt FeatureCollections}: several classification strategies
+together related JSON Element using \texttt{FeatureCollections}: several classification strategies
 can be applied, for example by grouping the elements by storey or even by room.
 Alternatively, since the furnishings are more likely to change than the
 architectural components of a building, these two different kinds of elements
-can be isolated in different {\tt FeatureCollections}.
+can be isolated in different \texttt{FeatureCollections}.
 
 The hierarchical structure of the document gives visible form to the capability of HIJSON Elements to have children elements. A unique ID is mandatory for every HIJSON Element. 
 
-Three Geometry types can be used here: {\tt Point}, {\tt LineString}  and {\tt
+Three Geometry types can be used here: \texttt{Point}, \texttt{LineString}  and {\tt
 Polygon}. The choice of the Geometry type to be associated to a HIJSON Element
-implicitly defines the category of the element: {\tt Point} is used for
-furnishings, {\tt LineString} for walls and doors, while {\tt Polygon} may
+implicitly defines the category of the element: \texttt{Point} is used for
+furnishings, \texttt{LineString} for walls and doors, while \texttt{Polygon} may
 describe levels and rooms.
 
 The Geometry coordinates are expressed in metres, by convention starting at
 the bottom-left corner of the element, whose position is used to set-up the
 origin of a local coordinate frame. Unlike GeoJSON, where all properties are
 optional, in HIJSON some strict requirements are imposed, and some attributes
-are mandatories:
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
- {\tt class}: represents the element category, used to instantiate
- the appropriate \emph{HIJSON Class};
-\item
- {\tt parent}: contains the ID of the parent of the element;
-\item
- {\tt tVector}: represents the translation relative to 
- the parent element, expressed in metres;
-\item
- {\tt rVector}: represents the rotation relative to 
- the parent element, expressed in nonagesimal degrees.
-\end{itemize}
+are mandatories: a) \texttt{class} (representing the element category, used to
+instantiate  the appropriate \emph{HIJSON Class}), b) \texttt{parent}
+(containing the ID of the parent of the element), c) d) \texttt{tVector}
+(representing the translation relative to   the parent element, expressed in
+metres), e) \texttt{rVector} (representing the rotation relative to   the
+parent element, expressed in nonagesimal degrees).
 
 Specific classes may require the mandatory presence of other properties. For
-example, the classes {\tt internal\_wall} and {\tt external\_wall} that
-define the internal partitions and the external envelope, respectively, require a {\tt connections}
+example, the classes \texttt{internal\_wall} and \texttt{external\_wall} that
+define the internal partitions and the external envelope, respectively, require a \texttt{connections}
 array, containing the IDs of the adjacent elements. This information is used
 by the connector children of the element (e.g. doors) to identify the
 areas linked together.
@@ -226,7 +214,7 @@ are represented by their 2D shape, like on a planimetry. The property {\tt
 height} was introduced to assign a value to the height of the object, intended
 as a third dimension.
 
-A {\tt description} property can provide further information about
+A \texttt{description} property can provide further information about
 the element.
 Arbitrary optional fields can be added without restrictions, in order to
 enrich and extend the expressivity of the representation, or simply for the sake of 

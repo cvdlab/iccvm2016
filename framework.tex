@@ -1,4 +1,4 @@
-\section{FIVE Web Framework}\label{five-web-framework}
+\section{FIVE Web Framework}\label{framework}
 
 \begin{figure*}[htb]
 \centering
@@ -8,13 +8,14 @@
 \label{fig:web-framework-ui}
 \end{figure*}
 
-The FIVE Web Framework responds to the needs of an extendable,
-customizable, and scalable web framework which provides at the same time IoT
-monitoring, realtime multi-person tracking and cross-storey user
-navigation.
+FIVE, acronym of \emph{Framework for Indoor mapping in Virtual Environments},
+provides a customizable, and scalable web framework realizing an virtual
+indoor mapping platform in which multiple applications can convenient resides
+on at the same time: IoT,  monitoring, realtime multi-person tracking and
+cross-storey user navigation.
 
 Expandability and customizability derive from both design choices and
-HIJSON format inherent characteristics, i.e.~the possibility of semantic extensions.
+HIJSON format inherent characteristics, i.e.~the possibility of semantic extensions (see \ref{semantic-extensions}).
 Scalability is directly borrowed from technologies used for
 software development: \emph{JavaScript} language, using \emph{Node.js},
 in particular \emph{Express.js} as backend framework, exploiting the
@@ -26,7 +27,7 @@ website, both from desktop or mobile devices, without explicit
 requirements to install any software package from proprietary stores---access to
 which is often denied from business devices.
 
-The FIVE Web Framework deeply relies on HIJSON Toolkit and offers an
+The FIVE Web Framework deeply relies on HIJSON Toolkit (see \ref{toolkit}) and offers an
 all-inclusive client/server architecture with a convenient and highly interactive
 user interface, leaving aside the specific indoor positioning system and
 the IoT sensors to deal with. A robust application interface is provided and
@@ -142,8 +143,8 @@ object modelled as previously described.
 \subsubsection{Explorer client architecture}\label{explorer-client-architecture}
 
 The \emph{Explorer} client architecture is generally deployed on a mobile
-device, which is usually supplied to a user who needs to be routed across the
-environment described by the HIJSON document. The {\tt sensor\ adapter} module
+device, which is usually supplied to a user who needs to be routed across the indoor mapped
+environment. The {\tt sensor\ adapter} module
 encapsulates the communication logic with the indoor positioning system. The
 presence of this module ensures independence from particular technologies, so
 allowing the \emph{Explorer} client to rely on different indoor positioning
