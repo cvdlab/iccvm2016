@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.1)  3 SEP 2015 16:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.1)  3 SEP 2015 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,7 +384,11 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count126
 \c@bookmark@seq@number=\count127
 \Hy@SectionHShift=\skip49
-) (./iccvm2016.aux)
+) (./iccvm2016.aux
+
+LaTeX Warning: Label `fig:example' multiply defined.
+
+)
 \openout1 = `iccvm2016.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -481,76 +485,22 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (./introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-LaTeX Warning: Citation `indoormaps' on page 1 undefined on input line 33.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-
-LaTeX Warning: Reference `workflow' on page 2 undefined on input line 89.
-
-
-LaTeX Warning: Reference `conclusions' on page 2 undefined on input line 91.
-
-) (./related-work.tex
-
-LaTeX Warning: Citation `Eastman:2008:BHG:1796500' on page 2 undefined on input
- line 8.
-
-
-LaTeX Warning: Citation `6816739' on page 2 undefined on input line 8.
-
-
-LaTeX Warning: Citation `6878152' on page 2 undefined on input line 9.
-
-
-LaTeX Warning: Citation `6418876' on page 2 undefined on input line 11.
-
-
-LaTeX Warning: Citation `6878152' on page 2 undefined on input line 17.
-
-
-LaTeX Warning: Citation `6418876' on page 2 undefined on input line 17.
-
-
-LaTeX Warning: Citation `6816739' on page 2 undefined on input line 17.
-
-
-LaTeX Warning: Citation `6815564' on page 2 undefined on input line 30.
-
-
-LaTeX Warning: Citation `6815564' on page 2 undefined on input line 33.
-
-
-LaTeX Warning: Citation `6878152' on page 2 undefined on input line 33.
-
-
-LaTeX Warning: Citation `geojson' on page 2 undefined on input line 36.
-
-
-LaTeX Warning: Citation `indoorjson' on page 2 undefined on input line 38.
-
-
-LaTeX Warning: Citation `geojson' on page 2 undefined on input line 45.
-
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: Citation `indoorjson' on page 2 undefined on input line 54.
-
-[2]) (./framework.tex
-<images/web_framework_2.png, id=28, 1845.89626pt x 1246.6575pt>
+]) (./related-work.tex
+<images/web_framework_2.png, id=35, 1845.89626pt x 1246.6575pt>
 File: images/web_framework_2.png Graphic file (type png)
 
 <use images/web_framework_2.png>
-Package pdftex.def Info: images/web_framework_2.png used on input line 6.
+Package pdftex.def Info: images/web_framework_2.png used on input line 45.
 (pdftex.def)             Requested size: 496.85625pt x 335.55579pt.
- [3]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 58.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [2])
+(./framework.tex [3 <./images/web_framework_2.png>]
 Package epstopdf Info: Source file: <images/architecture.eps>
 (epstopdf)                    date: 2015-05-18 00:05:06
 (epstopdf)                    size: 791424 bytes
@@ -559,37 +509,28 @@ Package epstopdf Info: Source file: <images/architecture.eps>
 (epstopdf)                    size: 165881 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/architecture-eps-co
 nverted-to.pdf images/architecture.eps>
-(epstopdf)             \includegraphics on input line 110.
+(epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/architecture-eps-converted-to.pdf, id=44, 833.1125pt x 230.8625pt>
+<images/architecture-eps-converted-to.pdf, id=69, 833.1125pt x 230.8625pt>
 File: images/architecture-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/architecture-eps-converted-to.pdf>
 Package pdftex.def Info: images/architecture-eps-converted-to.pdf used on input
- line 110.
+ line 102.
 (pdftex.def)             Requested size: 496.85625pt x 137.68369pt.
-
-
-LaTeX Warning: Reference `hijson-class-definition' on page 4 undefined on input
- line 144.
-
-[4 <./images/web_framework_2.png>])
-Underfull \hbox (badness 1132) in paragraph at lines 172--124
+ [4])
+Underfull \hbox (badness 1132) in paragraph at lines 164--124
 \OT1/ptm/m/n/10 cor-re-spond-ing \OT1/pcr/m/n/10 smart object proxy \OT1/ptm/m/
 n/10 on the server.
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 172--124
+Underfull \hbox (badness 1147) in paragraph at lines 164--124
 \OT1/ptm/m/n/10 by their names. When the user re-quires in-for-ma-tion
  []
 
-(./hijson.tex
-
-LaTeX Warning: Reference `lar' on page 5 undefined on input line 10.
-
-[5 <./images/architecture-eps-converted-to.pdf>]
+(./hijson.tex [5 <./images/architecture-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 []\OT1/ptm/m/n/10 A HI-J-SON doc-u-ment is com-posed by a con-
  []
@@ -622,7 +563,7 @@ Underfull \hbox (badness 3108) in paragraph at lines 127--129
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 149.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
 [6]
 Underfull \hbox (badness 5161) in paragraph at lines 159--167
 []\OT1/ptm/m/n/10 Each el-e-ment of the list is given in the form
@@ -673,7 +614,7 @@ ted-to.pdf images/pipeline.eps>
 (epstopdf)             \includegraphics on input line 39.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/pipeline-eps-converted-to.pdf, id=137, 803.0pt x 1027.84pt>
+<images/pipeline-eps-converted-to.pdf, id=168, 803.0pt x 1027.84pt>
 File: images/pipeline-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/pipeline-eps-converted-to.pdf>
@@ -686,13 +627,6 @@ LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
 Underfull \hbox (badness 1389) in paragraph at lines 94--100
 \OT1/ptm/m/n/10 This stage, in which are per-formed tasks like break-
  []
-
-
-LaTeX Warning: Citation `6999103' on page 8 undefined on input line 112.
-
-
-LaTeX Warning: Reference `fig:graph-generation' on page 8 undefined on input li
-ne 121.
 
 [8 <./images/pipeline-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/graph-generation/single/graph-gener
@@ -709,7 +643,7 @@ ph-generation-1.eps>
 (epstopdf)             \includegraphics on input line 140.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/graph-generation/single/graph-generation-1-eps-converted-to.pdf, id=150
+<images/graph-generation/single/graph-generation-1-eps-converted-to.pdf, id=184
 , 164.615pt x 123.46124pt>
 File: images/graph-generation/single/graph-generation-1-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -732,7 +666,7 @@ ph-generation-2.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/graph-generation/single/graph-generation-2-eps-converted-to.pdf, id=151
+<images/graph-generation/single/graph-generation-2-eps-converted-to.pdf, id=185
 , 164.615pt x 123.46124pt>
 File: images/graph-generation/single/graph-generation-2-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -755,7 +689,7 @@ ph-generation-3.eps>
 (epstopdf)             \includegraphics on input line 144.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/graph-generation/single/graph-generation-3-eps-converted-to.pdf, id=152
+<images/graph-generation/single/graph-generation-3-eps-converted-to.pdf, id=186
 , 164.615pt x 123.46124pt>
 File: images/graph-generation/single/graph-generation-3-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -778,7 +712,7 @@ ph-generation-4.eps>
 (epstopdf)             \includegraphics on input line 146.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/graph-generation/single/graph-generation-4-eps-converted-to.pdf, id=153
+<images/graph-generation/single/graph-generation-4-eps-converted-to.pdf, id=187
 , 164.615pt x 123.46124pt>
 File: images/graph-generation/single/graph-generation-4-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -799,19 +733,15 @@ eps-converted-to.pdf images/element-class-node.eps>
 (epstopdf)             \includegraphics on input line 162.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/element-class-node-eps-converted-to.pdf, id=154, 1027.84pt x 200.75pt>
+<images/element-class-node-eps-converted-to.pdf, id=188, 1027.84pt x 200.75pt>
 File: images/element-class-node-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/element-class-node-eps-converted-to.pdf>
 Package pdftex.def Info: images/element-class-node-eps-converted-to.pdf used on
  input line 162.
 (pdftex.def)             Requested size: 218.61795pt x 42.69786pt.
-
-
-LaTeX Warning: Reference `fig:elem-class-node-rel' on page 9 undefined on input
- line 170.
-
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 178.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
@@ -819,70 +749,70 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
 ) (./workflow.tex
-<images/ward/ward.pdf, id=155, 2007.5pt x 519.9425pt>
+<images/ward/ward.pdf, id=190, 2007.5pt x 519.9425pt>
 File: images/ward/ward.pdf Graphic file (type pdf)
 
 <use images/ward/ward.pdf>
 Package pdftex.def Info: images/ward/ward.pdf used on input line 6.
 (pdftex.def)             Requested size: 496.85625pt x 128.68417pt.
 
-<images/ward/ward1.png, id=156, 1209.51875pt x 912.40875pt>
+<images/ward/ward1.png, id=191, 1209.51875pt x 912.40875pt>
 File: images/ward/ward1.png Graphic file (type png)
 
 <use images/ward/ward1.png>
 Package pdftex.def Info: images/ward/ward1.png used on input line 8.
 (pdftex.def)             Requested size: 162.46992pt x 122.55728pt.
 
-<images/ward/ward4.png, id=157, 1216.545pt x 909.3975pt>
+<images/ward/ward4.png, id=192, 1216.545pt x 909.3975pt>
 File: images/ward/ward4.png Graphic file (type png)
 
 <use images/ward/ward4.png>
 Package pdftex.def Info: images/ward/ward4.png used on input line 9.
 (pdftex.def)             Requested size: 162.46992pt x 121.44511pt.
 
-<images/ward/ward5.png, id=158, 1214.5375pt x 910.40125pt>
+<images/ward/ward5.png, id=193, 1214.5375pt x 910.40125pt>
 File: images/ward/ward5.png Graphic file (type png)
 
 <use images/ward/ward5.png>
 Package pdftex.def Info: images/ward/ward5.png used on input line 10.
 (pdftex.def)             Requested size: 162.46992pt x 121.77364pt.
 
-<images/lab/lab0.png, id=159, 1213.53375pt x 912.40875pt>
+<images/lab/lab0.png, id=194, 1213.53375pt x 912.40875pt>
 File: images/lab/lab0.png Graphic file (type png)
 
 <use images/lab/lab0.png>
 Package pdftex.def Info: images/lab/lab0.png used on input line 19.
 (pdftex.def)             Requested size: 162.46992pt x 122.15353pt.
 
-<images/lab/lab2.png, id=160, 1221.56375pt x 909.3975pt>
+<images/lab/lab2.png, id=195, 1221.56375pt x 909.3975pt>
 File: images/lab/lab2.png Graphic file (type png)
 
 <use images/lab/lab2.png>
 Package pdftex.def Info: images/lab/lab2.png used on input line 20.
 (pdftex.def)             Requested size: 162.46992pt x 120.94557pt.
 
-<images/lab/lab3.png, id=161, 1213.53375pt x 910.40125pt>
+<images/lab/lab3.png, id=196, 1213.53375pt x 910.40125pt>
 File: images/lab/lab3.png Graphic file (type png)
 
 <use images/lab/lab3.png>
 Package pdftex.def Info: images/lab/lab3.png used on input line 21.
 (pdftex.def)             Requested size: 162.46992pt x 121.88477pt.
 
-<images/lab/lab4.png, id=162, 1211.52625pt x 910.40125pt>
+<images/lab/lab4.png, id=197, 1211.52625pt x 910.40125pt>
 File: images/lab/lab4.png Graphic file (type png)
 
 <use images/lab/lab4.png>
 Package pdftex.def Info: images/lab/lab4.png used on input line 23.
 (pdftex.def)             Requested size: 162.46992pt x 122.07925pt.
 
-<images/lab/lab5.png, id=163, 1212.53pt x 909.3975pt>
+<images/lab/lab5.png, id=198, 1212.53pt x 909.3975pt>
 File: images/lab/lab5.png Graphic file (type png)
 
 <use images/lab/lab5.png>
 Package pdftex.def Info: images/lab/lab5.png used on input line 24.
 (pdftex.def)             Requested size: 162.46992pt x 121.84753pt.
 
-<images/lab/lab6.png, id=164, 1212.53pt x 908.39375pt>
+<images/lab/lab6.png, id=199, 1212.53pt x 908.39375pt>
 File: images/lab/lab6.png Graphic file (type png)
 
 <use images/lab/lab6.png>
@@ -900,25 +830,14 @@ ages/graph-generation/single/graph-generation-3-eps-converted-to.pdf> <./images
 ment-class-node-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+)
+(./conclusions.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./images/ward/ward.pdf> <./images/ward/ward1.png> <./images/ward/ward4.pn
 g> <./images/ward/ward5.png> <./images/lab/lab0.png> <./images/lab/lab2.png> <.
 /images/lab/lab3.png> <./images/lab/lab4.png> <./images/lab/lab5.png> <./images
-/lab/lab6.png>]) (./conclusions.tex
-
-LaTeX Warning: Citation `Dicarlo:2014:TNL:2543138.2543294' on page 11 undefined
- on input line 8.
-
-
-LaTeX Warning: Citation `paoluzziMS:2014' on page 11 undefined on input line 8.
-
-
-
-LaTeX Warning: Citation `cadanda:2015' on page 11 undefined on input line 8.
-
-) (./acknoledgments.tex) (./iccvm2016.bbl (./iccvm2016.brf)
+/lab/lab6.png>]) (./acknoledgments.tex) (./iccvm2016.bbl (./iccvm2016.brf)
 \tf@brf=\write3
 \openout3 = `iccvm2016.brf'.
 
@@ -933,7 +852,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--83
 , 2013.
  []
 
-) (./appendix.tex <images/minimum.pdf, id=239, 982.67125pt x 424.58624pt>
+) (./appendix.tex <images/minimum.pdf, id=275, 982.67125pt x 424.58624pt>
 File: images/minimum.pdf Graphic file (type pdf)
 
 <use images/minimum.pdf>
@@ -946,25 +865,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./iccvm2016.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
-Package rerunfilecheck Info: File `iccvm2016.brf' has not changed.
-(rerunfilecheck)             Checksum: F9D9C2DF994CC18AD457EE8C9FAB077A;696.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `iccvm2016.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
 
+Package rerunfilecheck Info: Checksums for `iccvm2016.brf':
+(rerunfilecheck)             Before: C937B5A6A25FF2ED1C8F1EB53ACA5D98;695
+(rerunfilecheck)             After:  132D338CB6277A9BF1D5A56EE0F085D2;710.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
  10453 strings out of 493304
  154959 string characters out of 6139872
- 274437 words of memory out of 5000000
+ 279907 words of memory out of 5000000
  13570 multiletter control sequences out of 15000+600000
  40809 words of font info for 88 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 44i,10n,38p,929b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,10n,38p,929b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -976,10 +897,10 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on iccvm2016.pdf (12 pages, 8809789 bytes).
+Output written on iccvm2016.pdf (12 pages, 8810141 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 272 compressed objects within 3 object streams
+ 373 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
  113 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
