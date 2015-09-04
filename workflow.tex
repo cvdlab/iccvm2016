@@ -38,7 +38,10 @@
    \label{fig:lab}
 \end{figure*}
 
-The 2.5D model of the built environment to interact with is generated offline and server-side, finally producing a HIJSON format.
+Figure~\ref{fig:hospital2} shows the 2.5D model of a general hospital. Such a
+model is generated offline and server-side as an intermediate product of the
+operative workflow for the relative HIJSON document generation.
+
 Currently, we produce the HIJSON document from a python
 script using two libraries for geometric computing (\texttt{pyplasm} and \texttt{larcc} \cite{Dicarlo:2014:TNL:2543138.2543294,paoluzziMS:2014,cadanda:2015}).
 
@@ -48,8 +51,7 @@ graphical editor to assist the user during the description of the indoor
 space. The realization of such an editor is already in our plans.
 
 
-
- The HIJSON  files are served on the web and transformed real-time client-side into the FIVE interactive interface (either 2D, or 3D or both) of the indoor mapping applications. The sequence of steps is outlined below:
+The HIJSON  files are served on the web and transformed real-time client-side into the FIVE interactive interface (either 2D, or 3D or both) of the indoor mapping applications. The sequence of steps is outlined below:
 
 1. \textit{Input of wire-frame drawings},
   starting from   raster \emph{images} of architectural floorplans of the building, interpreted into a simplified 2D vector representation (\texttt{.svg} files);
@@ -63,9 +65,11 @@ space. The realization of such an editor is already in our plans.
 4. \textit{Exporting to HIJSON file}.
 The  structured and semantically annotated 2.5D building model is finally  exported as a rich textual description into \texttt{HIJSON} files, i.e.~in JSON format, though and intermediate \texttt{.yml} translation;
 
-5. \textit{Client-based processing}
-  The \texttt{.json} files are finally transformed client-side into 
-  2D and/or 3D virtual environments, allowing the real-time spatial placement and
-  user-tracing within the virtual environment of the individuals moving
-  inside the real building (see Figures~\ref{fig:ward} and~\ref{fig:lab}).
+5. \textit{HIJSON pipeline processing}   The \texttt{.json} files are finally
+passed to the HIJSON pipeline;   common stages are executed once server-side;
+data are sent client-side where the execution of further stages can be
+possibly required; produced data feed the 2D and/or 3D virtual environments,
+allowing the real-time spatial placement and   user-tracing within the virtual
+environment of the individuals moving   inside the real building (see
+Figures~\ref{fig:ward} and~\ref{fig:lab}).
 
