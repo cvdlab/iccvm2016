@@ -2,9 +2,15 @@
 \section{Appendix}
 \subsection{Short summary of the LAR scheme}\label{sec:lar}
 
-LAR, standing for \emph{Linear Algebraic Representation}, is a novel representation of geometric models and/or finite element meshes, strongly based on algebraic topology and on linear algebra. The LAR scheme is characterized by a large domain --- the set of cellular complexes, with cells even non convex and with internal holes --- and by computer representation as \emph{a chain complex of} binary sparse matrices. In particular, the LAR of a model of dimension $d$, embedded in $n$-space, is a triple $\langle \texttt{V}, \texttt{CSR}(M_d), \texttt{CSR}(M_{d-1}) \rangle$, where 
+LAR, standing for \emph{Linear Algebraic Representation}, is a novel dimension-independent representation of geometric models, finite element meshes and 2D/3D images, strongly based on algebraic topology and linear algebra~\cite{Dicarlo:2014:TNL:2543138.2543294,cadanda:2015}.
+
+The LAR scheme is characterized by a large domain --- the set of \emph{cellular complexes}, with cells even non convex and with internal holes --- and by a computer representation as \emph{a chain complex} of binary sparse matrices. 
+
+In particular, the LAR of a model of dimension $d$, embedded in $n$-space, is a triple $\langle \texttt{V}, \texttt{CSR}(M_d), \texttt{CSR}(M_{d-1}) \rangle$, where 
 \texttt{V} is the array $m\times n$ of vertex coordinates, with $m$ the number of vertices (0-cells of the cellular complex), and where 
 $\texttt{CSR}(M_d)$ and $\texttt{CSR}(M_{d-1})$ are the Compressed Sparse Row (\texttt{CSR}) representations of the characteristic matrices of dimension $d$ and $d-1$, respectively.  
+
+A \emph{reduced} LAR $\langle \texttt{V}, \texttt{CSR}(M_d)) \rangle$ suffices for a \emph{complete} representation of models with $d$-cells with fixed topology (e.g.~for simplicial and cuboidal complexes).
 
 The characteristic matrix $M_d$ is a binary matrix representing (by rows) the $d$-cells of a cellular complex as subsets of vertices. It is possible to see that each $M_k$ ($0\leq k\leq d$) contains (by rows) a \emph{basis} of the \emph{linear space} $C_k$ of \emph{$k$-chains}, defined as subsets of $k$-cells. In other words, the rows of $M_k$ give a set of generators (over the field $\mathbb{Z} = \{0,1\}$) for the set of all the subsets of $k$-cells. Any such subset can be so represented as a (binary) linear combination of $k$-cells.
 A chain complex is a sequence of linear maps $ \cdots \xrightarrow{\partial_{k+1}} C_k \xrightarrow{\partial_k} C_{k-1} \xrightarrow{\partial_{k-1}} \cdots $, called \emph{boundary operators}, that must satisfy $\partial_{k-1} \circ \partial_k=0$ for each $k$.
