@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: iccvm2016.aux
+The style file: cvm.bst
+Database file #1: doceng2015.bib
+You've used 12 entries,
+            2120 wiz_defined-function locations,
+            572 strings with 6251 characters,
+and the built_in function-call counts, 4676 in all, are:
+= -- 444
+> -- 227
+< -- 6
++ -- 89
+- -- 76
+* -- 297
+:= -- 736
+add.period$ -- 41
+call.type$ -- 12
+change.case$ -- 71
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 191
+empty$ -- 376
+format.name$ -- 76
+if$ -- 1033
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 10
+newline$ -- 67
+num.names$ -- 26
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 153
+stack$ -- 0
+substring$ -- 246
+swap$ -- 69
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 46
+warning$ -- 0
+while$ -- 39
+width$ -- 14
+write$ -- 139
