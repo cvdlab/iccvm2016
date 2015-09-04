@@ -127,6 +127,14 @@ The configuration includes parameters and settings needed for building represent
 After the configuration part, the document includes a list of \texttt{FeatureCollection}. An example
 of \texttt{FeatureCollection} is given in listing~\ref{lst:feature-collection-example}.
 
+Each element of the list is given in the form of a GeoJSON {\tt
+FeatureCollection}, that contains an arbitrary  number of HIJSON Elements.
+Each \texttt{FeatureCollection} imposes a logical relationship that can be used
+to group together related HIJSON Elements. Since  HIJSON Elements adhere to
+the GeoJSON format, each \texttt{FeatureCollectio}n results compliant with GeoJSON
+syntax and then accepted by any GeoJSON validator. As detailed below, the
+HIJSON format  introduces some additional rules that allow the adoption of
+this format for indoor representation.
 
 \begin{lstlisting}[language=json, label={lst:feature-collection-example}, captionpos=b,  caption=Example of \texttt{FeatureCollection}.]
 {
@@ -155,15 +163,6 @@ of \texttt{FeatureCollection} is given in listing~\ref{lst:feature-collection-ex
   ]
 }
 \end{lstlisting}
-
-Each element of the list is given in the form of a GeoJSON {\tt
-FeatureCollection}, that contains an arbitrary  number of HIJSON Elements.
-Each \texttt{FeatureCollection} imposes a logical relationship that can be used
-to group together related HIJSON Elements. Since  HIJSON Elements adhere to
-the GeoJSON format, each \texttt{FeatureCollectio}n results compliant with GeoJSON
-syntax and then accepted by any GeoJSON validator. As detailed below, the
-HIJSON format  introduces some additional rules that allow the adoption of
-this format for indoor representation.
 
 
 \subsubsection{HIJSON Element}

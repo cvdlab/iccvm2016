@@ -1,6 +1,15 @@
+
+
 \appendix
 \section{Appendix}
 \subsection{Short summary of the LAR scheme}\label{sec:lar}
+
+\begin{figure*}[ptb] % figure placement: here, top, bottom, or page
+ \centering
+ \includegraphics[width=\linewidth]{images/minimum} 
+ \caption{A toy example of the LAR scheme: (a) the bare minimum of data with \emph{complete} information about topology; (b) the extracted boundary; (c) the extraction method $[e] = [\partial][f]$ giving the coordinate representation (in the discrete basis of the 1-cells) of the boundary edges $[e]$ by product of the sparse boundary operator matrix $[\partial]$ times the coordinate representation $[f]$ of the 2-cells (faces), in the discrete basis of the 2-cells.}
+ \label{fig:minimum}
+\end{figure*}
 
 LAR, standing for \emph{Linear Algebraic Representation}, is a novel dimension-independent representation of geometric models, finite element meshes and 2D/3D images, strongly based on algebraic topology and linear algebra~\cite{Dicarlo:2014:TNL:2543138.2543294,cadanda:2015}.
 
@@ -18,12 +27,4 @@ A chain complex is a sequence of linear maps $ \cdots \xrightarrow{\partial_{k+1
 The boundary operators are very important, since they allow for the computation of the boundary of \emph{every} subset ($k$-chain) of $k$-cells via a simple matrix-vector product between the coordinate representation of the operator and the coordinate representation of the chain. Notice that if $C_k$ and $C_{k-1}$ are known, through the characteristic matrices of their bases, then $\partial_k$ is known too.
 The knowledge of boundary operators $\partial_k$ and \emph{coboundary} operators $: C^{k} \xleftarrow{\delta^{k-1}} C^{k-1}$ between \emph{dual chain spaces}, with $\delta^{k-1} := \partial_k^\top$, provides full control of the topology of cellular complexes, including  any incidences between $k$- and $h$-chains $0\leq k,h\leq d$, that are actually used to compute automatically the external enveope and the internal partitions of building models, and where to open the doors and/or the windows in HIJSON files..
 A prototype LAR implementation is currently available as a Python library on \href{https://github.com/cvdlab/lar-cc}{https://github.com/cvdlab/lar-cc}. For a full discussion of the LAR scheme, the interested reader is referred to~\cite{Dicarlo:2014:TNL:2543138.2543294} and to~\cite{cadanda:2015}.
-
-
-\begin{figure}[ptb] % figure placement: here, top, bottom, or page
- \centering
- \includegraphics[width=\linewidth]{images/minimum} 
- \caption{A toy example of the LAR scheme: (a) the bare minimum of data with \emph{complete} information about topology; (b) the extracted boundary; (c) the extraction method $[e] = [\partial][f]$ giving the coordinate representation (in the discrete basis of the 1-cells) of the boundary edges $[e]$ by product of the sparse boundary operator matrix $[\partial]$ times the coordinate representation $[f]$ of the 2-cells (faces), in the discrete basis of the 2-cells.}
- \label{fig:minimum}
-\end{figure}
 
